@@ -3,6 +3,9 @@ import monkey from "vite-plugin-monkey";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: ".",
+  },
   plugins: [
     monkey({
       entry: "src/main.ts",
@@ -14,7 +17,7 @@ export default defineConfig({
         author: "KazooTTT",
         description: "锁定b站（bilibili）直播间发送弹幕为滚动模式",
         license: "MIT",
-        version: "0.0.1",
+        version: "0.0.2",
       },
     }),
   ],
