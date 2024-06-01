@@ -26,3 +26,5 @@ b 站的直播间的弹幕位置有三种，滚动、底部、顶部。
 ## 感谢
 
 油猴脚本的选项开关参考了 antfu 的[userscript-clean-twitter](https://github.com/antfu/userscript-clean-twitter)
+
+本项目使用的模板为：[vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey)
