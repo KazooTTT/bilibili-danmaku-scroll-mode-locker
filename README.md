@@ -1,6 +1,7 @@
 # 锁定 bilibili 直播间发送弹幕的位置
 
 这一个油猴脚本，用于锁定 bilibili 直播间发送弹幕的位置为滚动模式。
+
 ![example](https://pictures.kazoottt.top/2024/20240601-90b9ad0d4e883e5e27d1d329346bb9c8.webp)
 
 b 站的直播间的弹幕位置有三种，滚动、底部、顶部。
