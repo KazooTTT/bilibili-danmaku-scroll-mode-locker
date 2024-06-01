@@ -4,6 +4,7 @@ import {
   GM_registerMenuCommand,
   GM_setValue,
 } from "$";
+import axios from "axios";
 
 // create a mode enum
 enum Mode {
@@ -64,32 +65,22 @@ const hideHomeTabs = useOption(
 );
 
 const setDanmakuLocationConfig = async (csrf: string, mode: Mode) => {
-  console.log("%c Line:56 🍞 csrf", "color:#fca650", csrf);
-
-  let data = {
-    mode: mode,
-    csrf_token: csrf,
-    csrf: csrf,
-    room_id:
-      unsafeWindow.__NEPTUNE_IS_MY_WAIFU__.roomInfoRes.data.room_info.room_id,
-    visit_id: "",
-  };
-
-  const response = await fetch(
-    "https://api.live.bilibili.com/xlive/web-room/v1/dM/AjaxSetConfig",
-    {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    }
+  let data = new FormData();
+  data.append("mode", mode);
+  data.append("csrf_token", csrf);
+  data.append("csrf", csrf);
+  data.append(
+    "room_id",
+    unsafeWindow.__NEPTUNE_IS_MY_WAIFU__.roomInfoRes.data.room_info.room_id
   );
+  data.append("visit_id", "");
 
-  const responseData = await response.json();
-
-  if (responseData.code === 0) {
+  const response = await axios.post(
+    "https://api.live.bilibili.com/xlive/web-room/v1/dM/AjaxSetConfig",
+    data,
+    { withCredentials: true }
+  );
+  if (response.data.code === 0) {
     console.log("设置弹幕位置成功");
   } else {
     console.log("%c Line:68 🍣 response", "color:#3f7cff", response);
