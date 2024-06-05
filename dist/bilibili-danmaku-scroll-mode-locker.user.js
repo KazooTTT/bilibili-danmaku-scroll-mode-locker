@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         bilibili-danmaku-scroll-mode-locker
+// @name         锁定b站直播间发送弹幕为滚动模式
 // @namespace    https://github.com/KazooTTT/bilibili-danmaku-scroll-mode-locker
-// @version      0.0.2
+// @version      0.0.3
 // @author       KazooTTT
 // @description  锁定b站（bilibili）直播间发送弹幕为滚动模式
 // @license      MIT
