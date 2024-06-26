@@ -88,7 +88,7 @@ const setDanmakuLocationConfig = async (csrf: string, mode: Mode) => {
   }
 };
 
-if (hideHomeTabs) {
+if (hideHomeTabs.value) {
   const csrf = getCsrfToken();
   await setDanmakuLocationConfig(csrf, Mode.scroll);
 }

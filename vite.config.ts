@@ -18,7 +18,7 @@ export default defineConfig({
         author: "KazooTTT",
         description: "锁定b站（bilibili）直播间发送弹幕为滚动模式",
         license: "MIT",
-        version: "0.0.3"
+        version: "0.0.3",
       },
     }),
   ],
